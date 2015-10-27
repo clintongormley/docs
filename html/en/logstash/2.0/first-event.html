@@ -236,7 +236,7 @@
 									
 									<li><a href="/products/elasticsearch" id="nav_elasticsearch" >elasticsearch</a></li>
 									
-									<li><a href="/found" id="nav_hosted-elasticsearch" >hosted elasticsearch</a></li>
+									<li><a href="/found" id="nav_hosted-elasticsearch" >elasticsearch as a service</a></li>
 									
 									<li><a href="/products/logstash" id="nav_logstash" >logstash</a></li>
 									
@@ -255,10 +255,6 @@
 									<li><a href="/downloads" id="nav_downloads" >downloads</a></li>
 									
 								</ul>
-								
-							
-								<h3><a href="/found" id="nav_found" >Found</a></h3>
-
 								
 							
 								<h3><a href="/subscriptions" id="nav_subscriptions" >Subscriptions</a></h3>
@@ -388,7 +384,7 @@
 							
 								<li><a href="/products/elasticsearch" id="nav_elasticsearch" >elasticsearch</a></li>								
 							
-								<li><a href="/found" id="nav_hosted-elasticsearch" >hosted elasticsearch</a></li>								
+								<li><a href="/found" id="nav_hosted-elasticsearch" >elasticsearch as a service</a></li>								
 							
 								<li><a href="/products/logstash" id="nav_logstash" >logstash</a></li>								
 							
@@ -405,17 +401,6 @@
 								<li><a href="/products/hadoop" id="nav_hadoop" >hadoop</a></li>								
 							
 								<li><a href="/downloads" id="nav_downloads" >downloads</a></li>								
-								
-						</ul>							
-					</li>
-					
-					<li>
-						
-							
-						
-						<a href="/found" id="nav_found"   >Found</a>
-						
-						<ul class="dropdown">
 								
 						</ul>							
 					</li>
@@ -614,7 +599,7 @@
            
           <a href="upgrading-logstash.html">Upgrading Logstash
                »
-            </a></span></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="first-event"></a>Stashing Your First Event: Basic Logstash Example<a href="https://github.com/elastic/logstash/edit/master/docs/asciidoc/static/getting-started-with-logstash.asciidoc" class="edit_me" title="Edit this page on GitHub" rel="nofollow">edit</a></h2></div></div></div><p>To test your Logstash installation, run the most basic Logstash pipeline:</p><div class="pre_wrapper"><pre class="programlisting prettyprint lang-shell">cd logstash-1.5.2
+            </a></span></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="first-event"></a>Stashing Your First Event: Basic Logstash Example<a href="https://github.com/elastic/logstash/edit/master/docs/asciidoc/static/getting-started-with-logstash.asciidoc" class="edit_me" title="Edit this page on GitHub" rel="nofollow">edit</a></h2></div></div></div><p>To test your Logstash installation, run the most basic Logstash pipeline:</p><div class="pre_wrapper"><pre class="programlisting prettyprint lang-shell">cd logstash-{logstash_version}
 bin/logstash -e 'input { stdin { } } output { stdout {} }'</pre></div><p>The <code class="literal">-e</code> flag enables you to specify a configuration directly from the command line. Specifying configurations at the
 command line lets you quickly test configurations without having to edit a file between iterations.
 This pipeline takes input from the standard input, <code class="literal">stdin</code>, and moves that input to the standard output, <code class="literal">stdout</code>, in a

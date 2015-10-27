@@ -236,7 +236,7 @@
 									
 									<li><a href="/products/elasticsearch" id="nav_elasticsearch" >elasticsearch</a></li>
 									
-									<li><a href="/found" id="nav_hosted-elasticsearch" >hosted elasticsearch</a></li>
+									<li><a href="/found" id="nav_hosted-elasticsearch" >elasticsearch as a service</a></li>
 									
 									<li><a href="/products/logstash" id="nav_logstash" >logstash</a></li>
 									
@@ -255,10 +255,6 @@
 									<li><a href="/downloads" id="nav_downloads" >downloads</a></li>
 									
 								</ul>
-								
-							
-								<h3><a href="/found" id="nav_found" >Found</a></h3>
-
 								
 							
 								<h3><a href="/subscriptions" id="nav_subscriptions" >Subscriptions</a></h3>
@@ -388,7 +384,7 @@
 							
 								<li><a href="/products/elasticsearch" id="nav_elasticsearch" >elasticsearch</a></li>								
 							
-								<li><a href="/found" id="nav_hosted-elasticsearch" >hosted elasticsearch</a></li>								
+								<li><a href="/found" id="nav_hosted-elasticsearch" >elasticsearch as a service</a></li>								
 							
 								<li><a href="/products/logstash" id="nav_logstash" >logstash</a></li>								
 							
@@ -405,17 +401,6 @@
 								<li><a href="/products/hadoop" id="nav_hadoop" >hadoop</a></li>								
 							
 								<li><a href="/downloads" id="nav_downloads" >downloads</a></li>								
-								
-						</ul>							
-					</li>
-					
-					<li>
-						
-							
-						
-						<a href="/found" id="nav_found"   >Found</a>
-						
-						<ul class="dropdown">
 								
 						</ul>							
 					</li>
@@ -614,10 +599,11 @@
            
           <a href="query-dsl-and-query.html">And Query
                »
-            </a></span></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="query-dsl-indices-query"></a>Indices Query<a href="https://github.com/elastic/elasticsearch/edit/2.x/docs/reference/query-dsl/indices-query.asciidoc" class="edit_me" title="Edit this page on GitHub" rel="nofollow">edit</a></h2></div></div></div><p>The <code class="literal">indices</code> query can be used when executed across multiple indices,
-allowing to have a query that executes only when executed on an index
-that matches a specific list of indices, and another query that executes
-when it is executed on an index that does not match the listed indices.</p><div class="pre_wrapper"><pre class="programlisting prettyprint lang-js">{
+            </a></span></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="query-dsl-indices-query"></a>Indices Query<a href="https://github.com/elastic/elasticsearch/edit/2.x/docs/reference/query-dsl/indices-query.asciidoc" class="edit_me" title="Edit this page on GitHub" rel="nofollow">edit</a></h2></div></div></div><p>The <code class="literal">indices</code> query is useful in cases where a search is executed across
+multiple indices. It allows to specify a list of index names and an inner
+query that is only executed for indices matching names on that list.
+For other indices that are searched, but that don’t match entries
+on the list, the alternative <code class="literal">no_match_query</code> is executed.</p><div class="pre_wrapper"><pre class="programlisting prettyprint lang-js">{
     "indices" : {
         "indices" : ["index1", "index2"],
         "query" : {
